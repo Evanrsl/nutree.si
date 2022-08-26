@@ -20,12 +20,15 @@ const FoodGroup = ({ name, foods }) => {
         <Flex direction='row'>
             <Heading color='#F97316' size='lg' mt='0.5' m='1'>{name}</Heading>
         </Flex>
+        
         <VStack>
-            { 
-                foods.map((food) => 
-                // { console.log(food) }
-                    <FoodItem key={food.Code} name={food.Name} type={food.Type} calories={food["Energi (Energy)"]} />
-                )
+            
+            {foods.map((food) => {
+               console.log(food) 
+               return( 
+                
+                <FoodItem key={food.Code} name={food.Name} type={food.Type} calories={food["Energi (Energy)"]} />
+           )})
             }
         </VStack>
         
