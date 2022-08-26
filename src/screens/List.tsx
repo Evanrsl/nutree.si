@@ -15,15 +15,12 @@ export default function List() {
     >
       <AppBar title="Food Library" />
       <ScrollView flex={1} w={'100%'} bg={'muted.900'} pt={6}>
-        <VStack>
-          { 
-            Object.entries(foods).forEach(([group, foodItems]) => {
-              console.log(foodItems.slice(0,1))
-              return <FoodGroup name={group} foods={foodItems} />
-            })
-          }
-        </VStack>
-        
+        { 
+          Object.entries(foods).forEach(([group, foodItems]) => {
+            console.log(foodItems.slice(0,1))
+            return <FoodGroup name={group} foods={foodItems} />
+          })
+        }
         <FoodGroup
           name='Cereals'
           foods={[ {Code: '1', Name: "Satay Ayam", Type: "bumbu kacang", Calories: "1000"} ]}
