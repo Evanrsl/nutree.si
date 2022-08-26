@@ -47,7 +47,6 @@ export default function Profile() {
               Goal
             </Heading>
             <Text color="blue.400" mt={3} mr={5}>
-              {' '}
               See All
             </Text>
           </HStack>
@@ -67,11 +66,11 @@ export default function Profile() {
               <VStack>
                 <HStack>
                   <Text fontSize="xl">1500</Text>
-                  <Text fontSize="xl">target</Text>
+                  <Text fontSize="xl" mx={3}>target</Text>
                 </HStack>
                 <HStack>
                   <Text fontSize="xl">1675</Text>
-                  <Text fontSize="xl">avg</Text>
+                  <Text fontSize="xl" mx={3}>average</Text>
                 </HStack>
               </VStack>
             </HStack>
