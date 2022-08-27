@@ -1,4 +1,5 @@
 import { Box, HStack, Center, VStack, Heading, Text } from "native-base"
+import SearchBar from "react-native-dynamic-search-bar";
 
 /**
  * 
@@ -8,16 +9,16 @@ import { Box, HStack, Center, VStack, Heading, Text } from "native-base"
  * @param calories in Kal
  * @returns 
  */
-const FoodItem = ({ key, name, type, calories }) => {
+const FoodItem = ({ food }) => {
   return (
-    <Box rounded='2xl' bgColor='teal.700' mt='3' p='2'>
-      <HStack>
+    <Box rounded='2xl' bgColor='muted.200' mt='3' p='3'>
+      <HStack p={1}>
         {/* Image */}
-        <Center rounded='md' w='75' h='75' m='1' bgColor='amber.900'></Center>
-        <VStack ml='2'>
-          <Heading size='md'>{name}</Heading>
-          <Text>{type}</Text>
-          <Text>{calories}</Text>
+        <Center rounded='md' w='75' h='75'  bgColor='teal.400' />
+        <VStack pl='3'>
+          <Heading w='200' size='md'>{food.Name}</Heading>
+          <Text italic>{food.Type}</Text>
+          <Text bold color='muted.500'>{food["Energi (Energy)"]}</Text>
         </VStack>
       </HStack>
     </Box>
