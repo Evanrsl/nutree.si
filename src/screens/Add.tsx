@@ -65,7 +65,7 @@ export default function Add() {
       setTemp([JSON.parse(jsonValue), data])
     }
     await AsyncStorage.setItem('foods', JSON.stringify(temp))
-    console.log(temp)
+    setData([])
   }
 
   const pickImage = async () => {
