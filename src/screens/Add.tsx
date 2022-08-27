@@ -74,7 +74,6 @@ export default function Add() {
     >
       <AppBar title="Add" />
       <ScrollView flex={1} w={'100%'} p={5}>
-        <Center>
           {data.map(({ Name, Energi, Karbohidrat, Qty, Size, Protein, url}, index) => {
             return (
               <Box w='100%' rounded='2xl' bgColor='muted.800' mt='3' p='3' alignItems='center' alignContent='center'>
@@ -159,7 +158,7 @@ export default function Add() {
                   <ScrollView flex={1} w={'100%'}>
                     {foods.map(food => (
                       <Button
-					  	key={food}
+					  	          key={food}
                         onPress={() => {
                           setShowModal2(true)
                           setSelected(food)
@@ -256,7 +255,6 @@ export default function Add() {
             </Modal.Content>
           </Modal>
 
-
           <Center w={'100%'}
             alignSelf="center"
             bg={'muted.800'}
@@ -267,7 +265,6 @@ export default function Add() {
               {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
             </Box>
           </Center>
-
 
           <Center w={'100%'}
             alignSelf="center"
@@ -288,7 +285,6 @@ export default function Add() {
               <Text bold fontSize='lg'>0</Text>
             </HStack>
           </Center>
-        </Center>
       </ScrollView>
       {/* <Box h={10} bg={'primary.700'} w={'100%'} justifyContent={'flex-end'}>
         <HStack alignSelf="flex-end">

@@ -26,8 +26,6 @@ export default function Nutrition(props: any) {
 		console.log(x)
 	}
 
-
-
   	return (
 	<VStack p={5}>
 		{calculateNutrition()}
