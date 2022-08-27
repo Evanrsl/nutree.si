@@ -33,18 +33,17 @@ export default function Profile() {
   return (
     <Center
 		flex={1}
-		_dark={{ bg: 'black' }}
 		bg={{
-			linearGradient: {
-			colors: ['lightBlue.300', 'violet.800'],
-			start: [0, 0],
-			end: [1, 0]
-			}
-		}}
+      linearGradient: {
+      colors: [ 'orange.700','orange.400', 'muted.900'],
+      start: [0, 0.2],
+      end: [0.2, 0.4]
+      }
+    }}
     >
 		{/* {console.log(new Date(JSON.parse("\"2014-01-01T23:28:56.782Z\"")).getDay())} */}
 		<AppBar title="Profile" />
-		<ScrollView flex={1} w={'100%'} bg={'muted.900'}>
+		<ScrollView flex={1} w={'100%'}>
 			<Goal></Goal>
 			<Nutrition></Nutrition>
 			<Calories></Calories>

@@ -133,7 +133,7 @@ export default function Add() {
                   <HStack p={1}>
                     <Image
                       source={{ uri: url }}
-                      alt={Name}
+                      alt="Dish Image"
                       size="md"
                       rounded="md"
                       w="75"
@@ -255,7 +255,7 @@ export default function Add() {
                     <Center bgColor="cyan.100" />
                     <Image
                       source={{ uri: selected.url }}
-                      alt={selected.Name}
+                      alt="Dish Image"
                       rounded="md"
                       w="300"
                       h="200"
@@ -356,8 +356,9 @@ export default function Add() {
               </Button>
               {image && (
                 <Image
+                alt="Add Image"
                   rounded={'xl'}
-                  source={{ uri: image, alt: 'test' }}
+                  source={{ uri: image }}
                   style={{ width: 300, height: 300 }}
                 />
               )}
