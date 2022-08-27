@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient'
 import { extendTheme } from 'native-base'
 
 const config = {

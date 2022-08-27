@@ -1,0 +1,49 @@
+[
+    {
+        "Portion": "100 g",
+        "Edible Weight": "Edible weight 100 %",
+        "Code": "AP001",
+        "Name": "Rice",
+        "Latin Name": "",
+        "From": "",
+        "Group": "Cereals",
+        "Type": "Processed/Products",
+        "Description": "",
+        "Air (Water)": "56.7 g",
+        "Energi (Energy)": "180 Kal",
+        "Protein (Protein)": "3.0 g",
+        "Lemak (Fat)": "0.3 g"
+      },
+      {
+        "Portion": "100 g",
+        "Edible Weight": "Edible weight 100 %",
+        "Code": "BP023",
+        "Name": "Sago porridge",
+        "Latin Name": "",
+        "From": "",
+        "Group": "Starchy Roots & Tubers",
+        "Type": "Processed/Products",
+        "Description": "",
+        "Air (Water)": "62.5 g",
+        "Energi (Energy)": "167 Kal",
+        "Protein (Protein)": "0.2 g",
+        "Lemak (Fat)": "4.0 g",
+        "Karbohidrat (CHO)": "33.0 g"
+      },
+      {
+        "Portion": "100 g",
+        "Edible Weight": "Edible weight 100 %",
+        "Code": "AP060",
+        "Name": "Ketoprak",
+        "Latin Name": "",
+        "From": "",
+        "Group": "Cereals",
+        "Type": "Processed/Products",
+        "Description": "",
+        "Air (Water)": "69.1 g",
+        "Energi (Energy)": "153 Kal",
+        "Protein (Protein)": "7.9 g",
+        "Lemak (Fat)": "7.7 g",
+        "Karbohidrat (CHO)": "13.0 g"
+      }
+]
