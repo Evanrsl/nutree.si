@@ -18,7 +18,7 @@ const FoodItem = ({ food }) => {
         <VStack pl='3'>
           <Heading w='200' size='md'>{food.Name}</Heading>
           <Text italic>{food.Type}</Text>
-          <Text bold color='muted.500'>{food["Energi (Energy)"]}</Text>
+          <Text bold color='muted.500'>{food["Energi"]}</Text>
         </VStack>
       </HStack>
     </Box>

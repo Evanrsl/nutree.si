@@ -21,10 +21,12 @@ const MyTabs = () => {
         tabBarActiveTintColor: '#F97316',
         tabBarInactiveTintColor: '#ffffff',
         headerShown: false,
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           backgroundColor: '#0D9488',
           height: '8%'
-        }
+        },
+        
       }}
     >
       <Tab.Screen
