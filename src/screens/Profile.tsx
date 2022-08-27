@@ -13,14 +13,14 @@ const Profile = () => {
   
   return (
     <Center
-      flex={1}
-      bg={{
-        linearGradient: {
-        colors: ['orange.600', 'muted.900'],
-        start: [0, 0],
-        end: [0.5, 1]
-        }
-      }}
+		flex={1}
+		bg={{
+      linearGradient: {
+      colors: [ 'orange.700','orange.400', 'muted.900'],
+      start: [0, 0.2],
+      end: [0.2, 0.4]
+      }
+    }}
     >
 		<AppBar title="Profile" />
 		<ScrollView flex={1} w={'100%'}>
@@ -32,6 +32,7 @@ const Profile = () => {
       />
 			<Nutrition />
 			<Calories />
+
     	</ScrollView>
     </Center>
   )
