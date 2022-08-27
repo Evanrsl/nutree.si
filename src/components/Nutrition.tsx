@@ -23,7 +23,6 @@ export default function Nutrition(props: any) {
 			return {carb: newKarbohidrat, protein: newProtein, fat: newFat};
 		}, {carb:0, protein:0, fat:0});
 
-		console.log(x)
 	}
 
   	return (

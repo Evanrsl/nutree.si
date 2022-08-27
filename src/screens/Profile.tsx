@@ -6,6 +6,7 @@ import AppBar from '../components/app-bar'
 import Calories from '../components/Calories'
 import Goal from '../components/Goal'
 import Nutrition from '../components/Nutrition'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Profile = () => {
   const [showGoal, setShowGoal] = useState(false)

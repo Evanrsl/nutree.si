@@ -356,7 +356,7 @@ export default function Add() {
               </Button>
               {image && (
                 <Image
-                alt="Add Image"
+                  alt="Add Image"
                   rounded={'xl'}
                   source={{ uri: image }}
                   style={{ width: 300, height: 300 }}
@@ -405,6 +405,7 @@ export default function Add() {
               </Button>
             </HStack>
           </Center>
+        </Center>
       </ScrollView>
     </Center>
   )

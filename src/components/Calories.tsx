@@ -20,7 +20,6 @@ export default function Calories(props: any) {
 			return acc + parseFloat(item.Energi.replace(/[^\d.-]/g, ''));
 		}, 0);
 
-		console.log(x)
 	}
 
   return (
