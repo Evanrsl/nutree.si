@@ -4,14 +4,13 @@ import SearchBar from "react-native-dynamic-search-bar";
 import AppBar from '../components/app-bar'
 import FoodGroup from '../components/FoodGroup'
 import FoodItem from '../components/FoodItem'
-import foods from '../data/foods.json'
+import foods from '../data/data.json'
 import foodItems from '../data/nutree.json'
 
 export default function List() {
   const [filteredData, setFilteredData] = useState([])
 
   const handleOnChangeText = (text) => {
-    console.log(text)
     if (!text) {
       setFilteredData([])
     } else {
@@ -28,7 +27,7 @@ export default function List() {
           start: [0, 0],
           end: [0.6,1]
         }
-      }} 
+      }}
       flex={1}
     >
       <AppBar title="Food Library" />
@@ -42,7 +41,7 @@ export default function List() {
           placeholder="Search for food..."
           onChangeText={(text) => handleOnChangeText(text)}
           onClearPress={() => setFilteredData([])}
-          style={{ backgroundColor: 'muted.100' }}
+          style={{ backgroundColor: 'muted.800' }}
         />
       </Center>
       {
@@ -59,28 +58,38 @@ export default function List() {
             <Heading color='#F97316' size='lg' mt='0.5' m='1'>Search Results</Heading>
           </Flex>
           <FlatList
-          data={filteredData}
-          keyExtractor={food => food.Code}
-          renderItem={(food) => <FoodItem food={food.item} />}
-          h='80%'
-        />
+            data={filteredData}
+            keyExtractor={food => food.Code}
+            renderItem={(food) => <FoodItem food={food.item} />}
+            h='80%'
+          />
         </Box>
         :
-        <ScrollView flex={1} w={'100%'}>
-          {
-            Object.keys(foods).map((group, index) => {
-              return <FoodGroup key={index} name={group} foods={foods[group].slice(0,3)} />
-            })
-          }
-        </ScrollView>
-        // <FlatList 
-        //   data={Object.keys(foods)}
-        //   renderItem={({ item }) => {
-        //     // console.log(item)
-        //     return <FoodGroup name={item} foods={foods[item]} />
-        //   }}
-        //   // keyExtractor={group => foods[group.item].Code}
-        // />
+        <Box
+          w='94%'
+          bgColor='muted.800'
+          flex={1}
+          p={5} pt={2}
+          m={3} mb={1}
+          rounded='2xl'
+        >
+          <Flex direction='row'>
+            <Heading color='#F97316' size='lg' mt='0.5' m='1'>Foods</Heading>
+          </Flex>
+          <FlatList
+            data={foods}
+            keyExtractor={food => food.Code}
+            renderItem={(food) => <FoodItem food={food.item} />}
+            h='80%'
+          />
+        </Box>
+        // <ScrollView flex={1} w={'100%'}>
+        //   {
+        //     Object.keys(foods).map((group, index) => {
+        //       return <FoodGroup key={index} name={group} foods={foods[group].slice(0,3)} />
+        //     })
+        //   }
+        // </ScrollView>
       }
     </Center>
   )

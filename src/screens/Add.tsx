@@ -1,30 +1,14 @@
-import React, { useState } from 'react'
-import {
-  Text,
-  HStack,
-  Heading,
-  Center,
-  VStack,
-  Box,
-  ScrollView,
-  Modal,
-  Button,
-  Flex,
-  FlatList,
-  Select,
-  IconButton,
-  Icon,
-  Radio,
-  Stack,
-  Image
-} from 'native-base'
-import AppBar from '../components/app-bar'
-import SearchBar from 'react-native-dynamic-search-bar'
-import FoodItem from '../components/FoodItem'
-import foods from '../data/foods.json'
-import foodItems from '../data/nutree.json'
 import { FontAwesome } from '@expo/vector-icons'
-import * as ImagePicker from 'expo-image-picker';
+import * as ImagePicker from 'expo-image-picker'
+import {
+  Box, Button, Center, FlatList, Flex, Heading, HStack, Icon, IconButton, Image, Modal, Radio, ScrollView, Select, Stack, Text, VStack
+} from 'native-base'
+import React, { useState } from 'react'
+import SearchBar from 'react-native-dynamic-search-bar'
+import AppBar from '../components/app-bar'
+import FoodItem from '../components/FoodItem'
+import foods from '../data/data.json'
+import foodItems from '../data/nutree.json'
 
 export default function Add() {
   const [showModal, setShowModal] = useState(false)
@@ -80,42 +64,44 @@ export default function Add() {
   return (
     <Center
       flex={1}
-      _dark={{ bg: 'black' }}
-     
+      bg={{
+        linearGradient: {
+          colors: ['orange.100', 'orange.600', 'black'],
+          start: [0, 0],
+          end: [0.7,1]
+        }
+      }}
     >
       <AppBar title="Add" />
-      <ScrollView flex={1} w={'100%'} bg={'muted.900'} p={5}>
+      <ScrollView flex={1} w={'100%'} p={5}>
         <Center>
-          {data.map(({ Name, Energi, Karbohidrat, Qty, Size, Protein}, index) => {
+          {data.map(({ Name, Energi, Karbohidrat, Qty, Size, Protein, url}, index) => {
             return (
-              <Center m={3}>
-                <HStack>
-                  <Box p={50} bg={'cyan.100'} rounded={'xl'}></Box>
-                  <VStack p={3}>
-                    <Heading w="200" size="md">
-                      {Name} {Size}
-                    </Heading>
-                    <Text>{Energi}</Text>
-                    <Text>Carbs : {Karbohidrat}, Protein : {Protein}</Text>
-                    <HStack alignItems="center">
-                      <Text>Quantity : {Qty} </Text>
-                      <Text></Text>
-                    </HStack>
+              <Box w='100%' rounded='2xl' bgColor='muted.800' mt='3' p='3' alignItems='center' alignContent='center'>
+                <HStack p={1}>
+                  <Image source={{ uri: url }} alt={Name} size='md' rounded='md' w='75' h='75' />
+                  <VStack pl='3'>
+                    <Heading w='200' size='md'>{Name}</Heading>
+                    <Text bold color='muted.300'>{Energi}</Text>
+                    <Text italic>Carbs: {Karbohidrat},  Protein: {Protein}</Text>
+                    <Text>Quantity: {Qty} </Text>
                   </VStack>
-
                   <IconButton
-                    variant="solid"
+                    alignItems='center'
+                    p='3' pr='2' mt='6'
+                    h='10'
+                    colorScheme="red"
+                    variant="outline"
                     icon={
                       <Icon
-                        size="md"
+                        size="sm"
                         as={<FontAwesome name="trash" />}
-                        color="white"
                       />
                     }
                     onPress={() => handleDelete(index)}
                   />
                 </HStack>
-              </Center>
+              </Box>
             )
           })}
           <Button
@@ -136,7 +122,7 @@ export default function Add() {
             onClose={() => setShowModal(false)}
             avoidKeyboard
           >
-            <Modal.Content w={'100%'}>
+            <Modal.Content w={'93%'} rounded='2xl'>
               <Modal.CloseButton />
               <Modal.Header>Add New Dish</Modal.Header>
               <Modal.Body>
@@ -144,7 +130,7 @@ export default function Add() {
                   placeholder="Search for food..."
                   onChangeText={text => handleOnChangeText(text)}
                   onClearPress={() => setFilteredData([])}
-                  style={{}}
+                  style={{ width: '96%'}}
                 />
                 {filteredData.length !== 0 ? (
                   <Box
@@ -171,7 +157,7 @@ export default function Add() {
                   </Box>
                 ) : (
                   <ScrollView flex={1} w={'100%'}>
-                    {foods['Favorite'].map(food => (
+                    {foods.map(food => (
                       <Button
                         onPress={() => {
                           setShowModal2(true)
@@ -193,42 +179,41 @@ export default function Add() {
             onClose={() => setShowModal2(false)}
             size="lg"
           >
-            <Modal.Content w={'100%'}>
+            <Modal.Content w={'93%'} rounded='2xl'>
               <Modal.CloseButton />
               <Modal.Header>Select Size and Quantity</Modal.Header>
               <Modal.Body>
                 <Center m={3}>
-                  <HStack>
-                    <Box p={50} bg={'cyan.100'} rounded={'xl'}></Box>
-                    <VStack p={3}>
+                  <VStack>
+                    <Center  bgColor='cyan.100' />
+                    <Image source={{ uri: selected.url }} alt={selected.Name} rounded='md' w='300' h='200'  />
+                    <VStack p={1} pt={4}>
                       <Heading w="200" size="md">
                         {selected.Name}
                       </Heading>
-                      <Text>{selected.Energi}</Text>
-                      <Text>Carbs : {selected.Karbohidrat}</Text>
+                      <Text bold color='muted.400' my={1}>{selected.Energi}</Text>
+                      <Text bold color='muted.400'my={1}>Carbs : {selected.Karbohidrat}</Text>
 
-                      <Radio.Group name="Size" defaultValue="S"
-                      onChange={nextValue => setSize(nextValue)}>
+                      <Radio.Group name="Size" defaultValue="S" onChange={nextValue => setSize(nextValue)}>
                         <Stack
                           direction={{
                             base: 'row'
                           }}
                           alignItems={{
                             base: 'flex-start',
-                            md: 'center'
+                            md: 'row'
                           }}
-                          space={4}
-                          w="75%"
+                          space={3}
                           my={3}
                         >
                           <Radio value="S" size="sm" mx={1}>
-                            Small
+                            <Text fontSize='xs'>Small</Text>
                           </Radio>
                           <Radio value="M" size="sm" mx={1}>
-                            Medium
+                            <Text fontSize='xs'>Medium</Text>
                           </Radio>
                           <Radio value="L" size="sm" mx={1}>
-                            Large
+                            <Text fontSize='xs'>Large</Text>
                           </Radio>
                         </Stack>
                       </Radio.Group>
@@ -252,7 +237,7 @@ export default function Add() {
                         </Select>
                       </HStack>
                     </VStack>
-                  </HStack>
+                  </VStack>
                 </Center>
               </Modal.Body>
               <Modal.Footer>
@@ -288,22 +273,31 @@ export default function Add() {
             bg={'muted.800'}
             rounded="2xl"
             p={5} mt={5}>
-            
             <Box>
               <Text>{today}</Text>
             </Box>
           </Center>
+          <Center w={'100%'}
+            alignSelf="center"
+            bg={'muted.800'}
+            rounded="2xl"
+            p={5} mt={5}>
+            <HStack justifyContent="space-between" w='100%'>
+              <Text bold color='amber.700' fontSize='lg'>Total Calories</Text>
+              <Text bold fontSize='lg'>0</Text>
+            </HStack>
+          </Center>
         </Center>
       </ScrollView>
-      <Box h={10} bg={'primary.700'} w={'100%'} justifyContent={'flex-end'}>
+      {/* <Box h={10} bg={'primary.700'} w={'100%'} justifyContent={'flex-end'}>
         <HStack alignSelf="flex-end">
           <Text pt={3} fontSize={'md'}> Total Calorie </Text>
           {/* {data && data.map(({ Energi, Qty, Size}, index) => {
             setTotalCal(totalCal + parseInt(Energi.slice(0,-4)) * parseInt(Qty))
-          })} */}
+          })}
           <Text fontSize={'3xl'}>{totalCal}</Text>
         </HStack>
-      </Box>
+      </Box> */}
     </Center>
   )
 }

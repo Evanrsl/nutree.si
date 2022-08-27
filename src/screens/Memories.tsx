@@ -1,8 +1,7 @@
-import React from 'react'
-import { Text, HStack, Switch, useColorMode, Center, VStack, ScrollView, Heading, Divider, Box, Spacer, Stack, Button } from 'native-base'
-import AppBar from '../components/app-bar'
-import { BarChart, PieChart } from 'react-native-chart-kit'
+import { Center, ScrollView, VStack } from 'native-base';
+import React from 'react';
 import { Dimensions } from 'react-native';
+import AppBar from '../components/app-bar';
 import Calendar from '../components/Calendar';
 
 export default function Memories() {
@@ -11,17 +10,16 @@ export default function Memories() {
   	return (
 		<Center
 			flex={1}
-			_dark={{ bg: 'black' }}
 			bg={{
 				linearGradient: {
-				colors: ['lightBlue.300', 'violet.800'],
-				start: [0, 0],
-				end: [1, 0]
+				colors: ['muted.800', 'orange.500', 'teal.500'],
+				start: [0, 1],
+				end: [0.7, 0]
 				}
 			}}
 			>
 			<AppBar title="Memories" />
-			<ScrollView flex={1} w={'100%'} bg={'muted.900'}>
+			<ScrollView flex={1} w={'100%'}>
 				<VStack p={5}>
 					<Calendar boxSize={boxSize} year="2022" month="7" />
 					<Calendar boxSize={boxSize} year="2022" month="6" />

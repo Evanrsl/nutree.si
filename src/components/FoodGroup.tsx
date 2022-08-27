@@ -10,7 +10,7 @@ import FoodItem from "./FoodItem";
 const FoodGroup = ({ name, foods }) => {
   return (
     <Box
-        bg='muted.100'
+        bg='muted.800'
         flex={1}
         p={5} pt={2}
         m={3} mb={1}
