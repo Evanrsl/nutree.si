@@ -19,12 +19,17 @@ import {
 import AppBar from '../components/app-bar'
 import { BarChart, PieChart, LineChart } from 'react-native-chart-kit'
 import SearchBar from "react-native-dynamic-search-bar";
-import nutree from '../data/nutree.json';
+import list from '../data/data.json';
 
 
 export default function Add() {
   const [showModal, setShowModal] = useState(false);
   const [data, setData] = useState([]);
+
+  function handleAddDish(id="") {
+    setData(id);
+  }
+
   return (
     <Center
       flex={1}
@@ -71,19 +76,21 @@ export default function Add() {
               onChangeText={(text) => console.log(text)}
               style={{width:"100%"}}
             />
-          {nutree.map(({Name}) =>{
-              <Text>{Object.values(Name)}</Text>
+          {list.map(({Name}) =>{
+            return(<Button onPress={()=> {setShowModal(false)}} my={1} bg={'muted.600'}>
+            <Text>{Name}</Text>
+          </Button>)
           }
           )}
-          <Text>test</Text>
+
           </Modal.Body>
         </Modal.Content>
       </Modal>
     </Center>
-    {nutree.map(({Name}) =>{
+    {/* {nutree.map(({Name}) =>{
               <Text>{Object.values(Name)}</Text>
           }
-          )}
+          )} */}
 
       </ScrollView>
     </Center>
