@@ -10,7 +10,8 @@
         "Energi": "180 Kal",
         "Protein": "3.0 g",
         "Fat": "0.3 g",
-        "Karbohidrat": "39.8 g"
+        "Karbohidrat": "39.8 g",
+        "url": "https://assets.epicurious.com/photos/57d70c8ade27564257b657c6/master/pass/perfect-steamed-rice.jpg"
       },
       {
         "Portion": "100 g",
@@ -23,7 +24,8 @@
         "Energi": "106 Kal",
         "Protein": "16.5 g",
         "Fat": "3.3 g",
-        "Karbohidrat": "2.5 g"
+        "Karbohidrat": "2.5 g",
+        "url": "https://thumbs.dreamstime.com/b/k%C3%B6stlicher-hauptfischcurry-indonesien-nannte-gulai-kepala-ikan-hauptfisch-den-curry-ist-traditionelle-lebensmittel-179161577.jpg"
       },
       {
         "Portion": "100 g",
@@ -36,20 +38,24 @@
         "Energi": "193 Kal",
         "Protein": "22.6 g",
         "Fat": "7.9 g",
-        "Karbohidrat": "7.8 g"
+        "Karbohidrat": "7.8 g",
+        "url": "https://i.pinimg.com/originals/1c/67/48/1c6748df8678a5f14565e3981f826c82.jpg"
       },
       {
         "Portion": "100 g",
         "Edible Weight": "Edible weight 100 %",
         "Code": "AP081",
-        "Name": "Sweet martabak, Manis",
+        "Name": "Sweet Martabak",
+        "Latin Name": "",
+        "From": "",
         "Group": "Cereals",
         "Type": "Processed/Products",
         "Description": "",
         "Energi": "153 Kal",
         "Protein": "4.5 g",
         "Fat": "4.2 g",
-        "Karbohidrat": "24.3 g"
+        "Karbohidrat": "24.3 g",
+        "url": "https://i0.wp.com/come2indonesia.com/wp-content/uploads/2021/04/MARTABAK-3.jpg?fit=820%2C471&ssl=1"
       },
       {
         "Portion": "100 g",
@@ -62,7 +68,8 @@
         "Energi": "336 Kal",
         "Protein": "20.0 g",
         "Fat": "28.0 g",
-        "Karbohidrat": "7.8 g"
+        "Karbohidrat": "7.8 g",
+        "url": "https://www.springlane.de/magazin/wp-content/uploads/2021/02/Tempeh_selber_machen_105299_Featured.jpg"
       },
       {
         "Portion": "100 g",
@@ -75,7 +82,8 @@
         "Energi": "115 Kal",
         "Protein": "9.7 g",
         "Fat": "8.5 g",
-        "Karbohidrat": "2.5 g"
+        "Karbohidrat": "2.5 g",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Tofu_4.jpg/1200px-Tofu_4.jpg"
       },
       {
         "Portion": "100 g",
@@ -88,7 +96,8 @@
         "Energi": "168 Kal",
         "Protein": "13.0 g",
         "Fat": "9.6 g",
-        "Karbohidrat": "7.5 g"
+        "Karbohidrat": "7.5 g",
+        "url": "https://www.grillfuerst.de/magazin/wp-content/uploads/2021/10/Chicken-Teriyaki-Sauce-scaled.jpg?v=1655391736"
       },
       {
         "Portion": "100 g",
@@ -101,7 +110,8 @@
         "Energi": "114 Kal",
         "Protein": "5.3 g",
         "Fat": "3.0 g",
-        "Karbohidrat": "16.4 g"
+        "Karbohidrat": "16.4 g",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Indonesian_bakso%2C_with_noodle_and_bean_sprouts%2C_April_2018_%2803%29.jpg"
       },
       {
         "Portion": "100 g",
@@ -114,19 +124,7 @@
         "Energi": "60 Kal",
         "Protein": "3.5 g",
         "Fat": "4.5 g",
-        "Karbohidrat": "1.3 g"
-      },
-      {
-        "Portion": "100 g",
-        "Edible Weight": "Edible weight 89 %",
-        "Code": "HR002",
-        "Name": "Caged egg, fresh",
-        "Group": "Eggs",
-        "Type": "Raw",
-        "Description": "",
-        "Energi": "154 Kal",
-        "Protein": "12.4 g",
-        "Fat": "10.8 g",
-        "Karbohidrat": "0.7 g"
+        "Karbohidrat": "1.3 g",
+        "url": "https://ais.kochbar.de/kbrezept/571207_1241668/1200x1200/indonesische-huehnersuppe-soto-ayam-madura-rezept-bild-nr-2.jpg"
       }
     ]
