@@ -12,9 +12,9 @@ export default function Memories() {
 			flex={1}
 			bg={{
 				linearGradient: {
-				colors: ['muted.800', 'orange.500', 'teal.500'],
-				start: [0, 1],
-				end: [0.7, 0]
+				colors: ['muted.900', 'orange.600', 'teal.500'],
+				start: [0.4, 0.4],
+				end: [1, 0]
 				}
 			}}
 			>
