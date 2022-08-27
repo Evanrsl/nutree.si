@@ -1,35 +1,16 @@
-import React from 'react'
 import {
-  Text,
-  HStack,
-  Heading,
-  Switch,
-  useColorMode,
-  Center,
-  VStack,
-  Box,
-  NativeBaseProvider,
-  Container,
-  ScrollView,
-  Divider
+  Center, ScrollView
 } from 'native-base'
+import React, { useState } from 'react'
 import AppBar from '../components/app-bar'
-import { BarChart, PieChart, LineChart } from 'react-native-chart-kit'
-import { background } from 'native-base/lib/typescript/theme/styled-system'
+import Calories from '../components/Calories'
 import Goal from '../components/Goal'
 import Nutrition from '../components/Nutrition'
-import Calories from '../components/Calories'
 
-export default function Profile() {
-  const LinearGradient = require('expo-linear-gradient').LinearGradient
-  const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-    datasets: [
-      {
-        data: [20, 45, 28, 80, 99, 43]
-      }
-    ]
-  }
+const Profile = () => {
+  const [showGoal, setShowGoal] = useState(false)
+  const [goal, setGoal] = useState({ today: "1450", target: "1500", avg: "1675"})
+  
   return (
     <Center
 		flex={1}
@@ -41,13 +22,20 @@ export default function Profile() {
       }
     }}
     >
-		{/* {console.log(new Date(JSON.parse("\"2014-01-01T23:28:56.782Z\"")).getDay())} */}
 		<AppBar title="Profile" />
 		<ScrollView flex={1} w={'100%'}>
-			<Goal></Goal>
-			<Nutrition></Nutrition>
-			<Calories></Calories>
+			<Goal
+        modalOpen={showGoal}
+        handleModal={setShowGoal}
+        goal={goal}
+        handleGoal={setGoal}
+      />
+			<Nutrition />
+			<Calories />
+
     	</ScrollView>
     </Center>
   )
 }
+
+export default Profile;

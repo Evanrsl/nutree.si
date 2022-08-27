@@ -405,7 +405,6 @@ export default function Add() {
               </Button>
             </HStack>
           </Center>
-        </Center>
       </ScrollView>
     </Center>
   )
