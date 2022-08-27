@@ -88,7 +88,7 @@ export default function Add() {
         <Center>
           {data.map(({ Name, Energi, Karbohidrat, Qty, Size, Protein}, index) => {
             return (
-              <Center m={3}>
+              <Center m={3} key={Name}>
                 <HStack>
                   <Box p={50} bg={'cyan.100'} rounded={'xl'}></Box>
                   <VStack p={3}>
@@ -173,6 +173,7 @@ export default function Add() {
                   <ScrollView flex={1} w={'100%'}>
                     {foods['Favorite'].map(food => (
                       <Button
+					  	key={food}
                         onPress={() => {
                           setShowModal2(true)
                           setSelected(food)
