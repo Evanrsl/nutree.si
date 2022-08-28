@@ -1,46 +1,50 @@
+import { Center, Divider, Heading, HStack, Pressable, Text, VStack } from 'native-base'
 import * as React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { HStack, NativeBaseProvider, VStack, Heading, Center, Text, Divider } from 'native-base'
-import theme from '../theme'
-import { LinearGradient } from 'expo-linear-gradient'
+import GoalModal from './GoalModal';
 
-export default function Goal(props: any) {
+const Goal = ({ modalOpen, handleModal, goal, handleGoal }) => {
   return (
-	<VStack p={5}>
-		<HStack justifyContent={'space-between'}>
-			<Heading color="white" size="lg" m={1}>
-				Goal
-			</Heading>
-			<Text color="blue.400" mt={3} mr={5}>
-				{' '}
-				See All
-			</Text>
-		</HStack>
-		<Center
-		w={'100%'}
-		alignSelf="center"
-		bg={'muted.800'}
-		rounded="2xl"
-		p={5}
-		>
-			<HStack>
-				<VStack>
-					<Text fontSize="xl">Today</Text>
-					<Text fontSize="5xl">1450</Text>
-				</VStack>
-				<Divider orientation="vertical" mx={10} thickness={3} />
-				<VStack>
+	<>
+		<Pressable onPress={() => handleModal(true)}>
+			<VStack p={5}>
+				<HStack justifyContent={'space-between'}>
+					<Heading color="white" size="lg" m={2} mb={3}>
+						Goal
+					</Heading>
+				</HStack>
+				<Center
+					w={'100%'}
+					alignSelf="center"
+					bg={'muted.800'}
+					rounded="2xl"
+					p={5}
+				>
 					<HStack>
-						<Text fontSize="xl">1500</Text>
-						<Text fontSize="xl">target</Text>
+						<VStack>
+							<Text fontSize="md">Today</Text>
+							<HStack>
+								<Text bold fontSize="5xl">{goal.today}</Text>
+								<Text bold fontSize="md" pl={1} mt={9}>kal</Text>
+							</HStack>
+						</VStack>
+						<Divider orientation="vertical" mx={10} thickness={3} />
+						<VStack justifyContent="space-evenly">
+							<HStack alignItems="center">
+								<Text fontSize="xl" mr={1.5}>{goal.target}</Text>
+								<Text fontSize="sm" color="orange.900">target</Text>
+							</HStack>
+							<HStack alignItems="center">
+								<Text fontSize="xl" mr={1.5}>{goal.avg}</Text>
+								<Text fontSize="sm" color="muted.500">avg</Text>
+							</HStack>
+						</VStack>
 					</HStack>
-					<HStack>
-						<Text fontSize="xl">1675</Text>
-						<Text fontSize="xl">avg</Text>
-					</HStack>
-				</VStack>
-			</HStack>
-		</Center>
-	</VStack>
+				</Center>
+			</VStack>
+		</Pressable>
+		<GoalModal isOpen={modalOpen} handleModal={handleModal} handleGoal={handleGoal} />
+	</>
 )
 }
+
+export default Goal;
