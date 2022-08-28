@@ -4,7 +4,7 @@ import AppBar from '../components/app-bar'
 import Calories from '../components/Calories'
 import Goal from '../components/Goal'
 import Nutrition from '../components/Nutrition'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import BarChartComponent from '../components/BarChartComponent'
 
 const Profile = () => {
   const [showGoal, setShowGoal] = useState(false)
@@ -25,17 +25,23 @@ const Profile = () => {
         }
       }}
     >
-      <AppBar title="Profile" />
-      <ScrollView flex={1} w={'100%'}>
-        <Goal
-          modalOpen={showGoal}
-          handleModal={setShowGoal}
-          goal={goal}
-          handleGoal={setGoal}
-        />
-        <Nutrition />
-        <Calories />
-      </ScrollView>
+		<AppBar title="Profile" />
+		<ScrollView flex={1} w={'100%'}>
+		<Goal
+			modalOpen={showGoal}
+			handleModal={setShowGoal}
+			goal={goal}
+			handleGoal={setGoal}
+		/>
+		<Nutrition />
+		{/* <Calories /> */}
+		<BarChartComponent type="Energi" title="Calories" />
+		<BarChartComponent type="Protein" title="Protein" />
+		<BarChartComponent type="Karbohidrat" title="Carbohydrate" />
+		<BarChartComponent type="Fat" title="Fat" />
+
+
+    	</ScrollView>
     </Center>
   )
 }

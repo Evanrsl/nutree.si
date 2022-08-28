@@ -27,7 +27,7 @@ export default function Nutrition(props: any) {
 
   	return (
 	<VStack p={5}>
-		{calculateNutrition()}
+		{/* {calculateNutrition()} */}
 		<HStack justifyContent={'space-between'}>
 			<Heading color="white" size="lg" m={1}>
 				Nutrition
