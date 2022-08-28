@@ -1,31 +1,13 @@
-import {
-  Box,
-  Button,
-  Center,
-  FlatList,
-  Flex,
-  Heading,
-  HStack,
-  Icon,
-  IconButton,
-  Image,
-  Modal,
-  Radio,
-  ScrollView,
-  Select,
-  Stack,
-  Text,
-  VStack
-} from 'native-base'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import * as ImagePicker from 'expo-image-picker'
+import { Box, Button, Center, FlatList, Flex, Heading, HStack, Image, Modal, Radio, ScrollView, Select, Stack, Text, VStack } from 'native-base'
 import React, { useState } from 'react'
 import SearchBar from 'react-native-dynamic-search-bar'
+import AddedFoodItem from '../components/AddedFoodItem'
 import AppBar from '../components/app-bar'
 import FoodItem from '../components/FoodItem'
 import foods from '../data/data.json'
 import foodItems from '../data/nutree.json'
-import { FontAwesome } from '@expo/vector-icons'
-import * as ImagePicker from 'expo-image-picker'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Add() {
   const [showModal, setShowModal] = useState(false)
@@ -115,65 +97,13 @@ export default function Add() {
       }}
     >
       <AppBar title="Add" />
-      <ScrollView flex={1} w={'95%'}>
-        <Center>
-          {data.map(
-            ({ Name, Energi, Karbohidrat, Qty, Size, Protein, url }, index) => {
-              return (
-                <Box
-                  key={index}
-                  w="100%"
-                  rounded="2xl"
-                  bgColor="muted.800"
-                  mt="3"
-                  p="3"
-                  alignItems="center"
-                  alignContent="center"
-                >
-                  <HStack p={1}>
-                    <Image
-                      source={{ uri: url }}
-                      alt="Dish Image"
-                      size="md"
-                      rounded="md"
-                      w="75"
-                      h="75"
-                    />
-                    <VStack pl="3">
-                      <Heading w="200" size="md">
-                        {Name}
-                      </Heading>
-                      <Text bold color="muted.300">
-                        {Energi}
-                      </Text>
-                      <Text italic>
-                        Carbs: {Karbohidrat}, Protein: {Protein}
-                      </Text>
-                      <Text>Quantity: {Qty} </Text>
-                    </VStack>
-                    <IconButton
-                      alignItems="center"
-                      p="3"
-                      pr="2"
-                      mt="6"
-                      h="10"
-                      colorScheme="red"
-                      variant="outline"
-                      icon={
-                        <Icon size="sm" as={<FontAwesome name="trash" />} />
-                      }
-                      onPress={() => handleDelete(index)}
-                    />
-                  </HStack>
-                </Box>
-              )
-            }
-          )}
+      <ScrollView flex={1} w={'95%'} mt={5}>
+          {
+            data.map((props, index) => <AddedFoodItem {...props} index={index} handleDelete={handleDelete} />)
+          }
           <Button
-            mt={2}
-            mb={10}
-            w={'100%'}
-            h={'80px'}
+            mt={2} mb={2}
+            w={'100%'} h={'80px'}
             rounded="xl"
             bg="muted.800"
             justifyContent={'center'}
@@ -224,16 +154,14 @@ export default function Add() {
                 ) : (
                   <ScrollView flex={1} w={'100%'}>
                     {foods.map(food => (
-                      <Button
+                      <FoodItem 
                         key={food.Code}
+                        food={food}
                         onPress={() => {
                           setShowModal2(true)
                           setSelected(food)
                         }}
-                        bg={'transparent'}
-                      >
-                        <FoodItem key={food.Code} food={food} />
-                      </Button>
+                      />
                     ))}
                   </ScrollView>
                 )}
