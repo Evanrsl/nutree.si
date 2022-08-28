@@ -17,7 +17,7 @@ import {
   Text,
   VStack
 } from 'native-base'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SearchBar from 'react-native-dynamic-search-bar'
 import AppBar from '../components/app-bar'
 import FoodItem from '../components/FoodItem'
@@ -58,15 +58,16 @@ export default function Add() {
     save(saveData)
   }
 
-  const save = async data => {
-    let jsonValue = await AsyncStorage.getItem('foods')
-
-    if (jsonValue !== null) {
-      setTemp([JSON.parse(jsonValue), data])
-    }
-    await AsyncStorage.setItem('foods', JSON.stringify(temp))
-    setData([])
-  }
+  // const save = async data => {
+  //   let jsonValue = await AsyncStorage.getItem('foods')
+  //   let foods = data
+  //   if (jsonValue !== null){
+  //     foods = [jsonValue]
+  //     foods.push(data)  
+  //   }
+  //   AsyncStorage.setItem('foods', JSON.stringify(foods))
+  //   setData([])
+  // }
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library

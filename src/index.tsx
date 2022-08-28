@@ -23,7 +23,7 @@ const MyTabs = () => {
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          backgroundColor: '#0D9488',
+          backgroundColor: '#115e59',
           height: '8%'
         },
         
