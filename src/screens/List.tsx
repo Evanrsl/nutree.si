@@ -23,7 +23,7 @@ export default function List() {
     <Center
       bg={{
         linearGradient: {
-          colors: ['blue.600', 'amber.600', 'black'],
+          colors: ['tertiary.500', 'tertiary.200', 'white'],
           start: [0, 0],
           end: [0.6,1]
         }
@@ -33,7 +33,7 @@ export default function List() {
       <AppBar title="Food Library" />
       <Center
         rounded='2xl'
-        bg='muted.100'
+        bg='white'
         w={'94%'}
         mt={5}
       >
@@ -41,21 +41,20 @@ export default function List() {
           placeholder="Search for food..."
           onChangeText={(text) => handleOnChangeText(text)}
           onClearPress={() => setFilteredData([])}
-          style={{ backgroundColor: 'muted.800' }}
         />
       </Center>
       {
         filteredData.length !== 0 ? 
         <Box
           w='94%'
-          bgColor='muted.100'
+          bgColor='white'
           flex={1}
           p={5} pt={2}
           m={3} mb={1}
           rounded='2xl'
         >
           <Flex direction='row'>
-            <Heading color='#F97316' size='lg' mt='0.5' m='1'>Search Results</Heading>
+            <Heading color='#34d399' size='lg' mt='0.5' m='1'>Search Results</Heading>
           </Flex>
           <FlatList
             data={filteredData}
@@ -67,14 +66,15 @@ export default function List() {
         :
         <Box
           w='94%'
-          bgColor='muted.800'
+          bgColor='white'
           flex={1}
           p={5} pt={2}
           m={3} mb={1}
           rounded='2xl'
+          shadow={3}
         >
           <Flex direction='row'>
-            <Heading color='#F97316' size='lg' mt='0.5' m='1'>Foods</Heading>
+            <Heading color='#34d399' size='lg' mt='0.5' m='1'>Foods</Heading>
           </Flex>
           <FlatList
             data={foods}

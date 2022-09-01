@@ -90,10 +90,10 @@ export default function Add() {
       flex={1}
       bg={{
         linearGradient: {
-          colors: ['orange.200', 'orange.700', 'black'],
+          colors: [ 'tertiary.500','tertiary.400','tertiary.300', 'muted.50'],
           start: [0, 0],
-          end: [0.3, 0.5]
-        }
+          end: [0, 0.7]
+          }
       }}
     >
       <AppBar title="Add" />
@@ -105,12 +105,13 @@ export default function Add() {
             mt={2} mb={2}
             w={'100%'} h={'80px'}
             rounded="xl"
-            bg="muted.800"
+            bg="white"
+            shadow={4}
             justifyContent={'center'}
             onPress={() => setShowModal(true)}
           >
             <Center>
-              <Text color="blue.400">Add New Dish</Text>
+              <Text color="emerald.300" fontSize="lg" bold>Add New Dish</Text>
             </Center>
           </Button>
           <Modal
@@ -131,7 +132,7 @@ export default function Add() {
                 {filteredData.length !== 0 ? (
                   <Box
                     w="94%"
-                    bgColor="muted.200"
+                    bgColor="white"
                     flex={1}
                     p={5}
                     pt={2}
@@ -140,7 +141,7 @@ export default function Add() {
                     rounded="2xl"
                   >
                     <Flex direction="row">
-                      <Heading color="#F97316" size="lg" mt="0.5" m="1">
+                      <Heading color="emerald.500" size="lg" mt="0.5" m="1">
                         Search Results
                       </Heading>
                     </Flex>
@@ -174,13 +175,13 @@ export default function Add() {
             onClose={() => setShowModal2(false)}
             size="lg"
           >
-            <Modal.Content w={'93%'} rounded="2xl">
+            <Modal.Content w={'93%'} rounded="2xl" bgColor="muted.800">
               <Modal.CloseButton />
               <Modal.Header>Select Size and Quantity</Modal.Header>
               <Modal.Body>
                 <Center m={3}>
                   <VStack>
-                    <Center bgColor="cyan.100" />
+                    <Center bgColor="emerald.400" />
                     <Image
                       source={{ uri: selected.url }}
                       alt="Dish Image"
@@ -189,7 +190,7 @@ export default function Add() {
                       h="200"
                     />
                     <VStack p={1} pt={4}>
-                      <Heading w="200" size="md">
+                      <Heading w="200" size="md" color="emerald.300">
                         {selected.Name}
                       </Heading>
                       <Text bold color="muted.400" my={1}>
@@ -236,7 +237,7 @@ export default function Add() {
                             setQty(itemValue)
                           }}
                           _selectedItem={{
-                            bg: 'cyan.600'
+                            bg: 'emerald.600'
                             // endIcon: <CheckIcon size={4} />
                           }}
                         >
@@ -310,28 +311,27 @@ export default function Add() {
             alignSelf="center"
             bg={'muted.800'}
             rounded="2xl"
-            p={5}
+            pl={5} pr={5} p={3}
             mt={5}
           >
             <HStack justifyContent="space-between" w="100%">
-              <Text bold color="amber.700" fontSize="lg">
+              <Text bold color="emerald.500" fontSize="lg">
                 Total Calories
               </Text>
               <Text bold fontSize="lg">
                 {totalCal}
               </Text>
-              <Button
+            </HStack>
+            <Button
                 bottom={2}
                 bg={'transparent'}
-                borderWidth={1}
-                borderColor={'blue.500'}
                 onPress={() => handlePost()}
+                mt={3} w="80"
               >
                 <Text bold fontSize={'lg'} color={'blue.500'}>
                   Post
                 </Text>
               </Button>
-            </HStack>
           </Center>
       </ScrollView>
     </Center>

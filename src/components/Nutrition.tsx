@@ -33,18 +33,15 @@ export default function Nutrition(props: any) {
 			<Heading color="white" size="lg" m={1}>
 				Nutrition
 			</Heading>
-			<Text color="blue.400" mt={3} mr={5}>
-				{' '}
-				See All
-			</Text>
 		</HStack>
 
 		<Center
 			w={'100%'}
 			alignSelf="center"
-			bg={'muted.800'}
+			bgColor="white"
 			rounded="2xl"
 			p={5}
+			shadow={3}
 		>
 			<VStack>
 				<Box w={'100%'}>
@@ -53,22 +50,22 @@ export default function Nutrition(props: any) {
 						{
 							name: 'Carbs',
 							value: 100,
-							color: '#0D9488',
-							legendFontColor: '#0D9488',
+							color: '#ef4444',
+							legendFontColor: '#ef4444',
 							legendFontSize: 20
 						},
 						{
 							name: 'Fat',
 							value: 30,
-							color: '#F97316',
-							legendFontColor: '#F97316',
+							color: '#fde047',
+							legendFontColor: '#fde047',
 							legendFontSize: 20
 						},
 						{
 							name: 'Protein',
 							value: 60,
-							color: '#005EB9',
-							legendFontColor: '#005EB9',
+							color: '#38bdf8',
+							legendFontColor: '#38bdf8',
 							legendFontSize: 20
 						}
 						]}
@@ -86,7 +83,7 @@ export default function Nutrition(props: any) {
 						accessor={'value'}
 						backgroundColor={'transparent'}
 						paddingLeft={'20'}
-						center={[1, 5]}
+						center={[-6, 5]}
 						absolute
 					/>
 				</Box>

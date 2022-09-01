@@ -27,22 +27,20 @@ export default function Calories(props: any) {
 	<VStack p={5}>
 		{calculateNutrition()}
 		<HStack justifyContent={'space-between'}>
-			<Heading color="white" size="lg" m={1}>
+			<Heading color="white" shadow={1} size="lg" m={1}>
 				Calories
 			</Heading>
-			<Text color="blue.400" mt={3} mr={5}>
-				See All
-			</Text>
 			</HStack>
 			<Center
 				w={'100%'}
 				alignSelf="center"
-				bg={'muted.800'}
+				bgColor="white"
 				rounded="2xl"
+				shadow={3}
 				p={5}
 			>
-			<VStack>
-				<Center w={'80%'} bg="muted.700" px={5} py={1} rounded="md">
+			<VStack alignItems="center">
+				<Center w={'80%'} bgColor="white" shadow={1} px={5} py={1} mb={3} rounded="md">
 					<HStack>
 						<Box bg="muted.500" flex={1} rounded="sm">
 							<Text alignSelf={'center'}>D</Text>
@@ -86,7 +84,7 @@ export default function Calories(props: any) {
 						decimalPlaces: 0,
 						backgroundGradientToOpacity: 0,
 						backgroundGradientFromOpacity: 0,
-						color: () => '#F97316',
+						color: () => '#4ade80',
 						labelColor: (opacity = 1) =>
 							`rgba(255, 255, 255, ${opacity})`,
 						style: {

@@ -13,6 +13,8 @@ const AddedFoodItem = ({ Name, Energi, Karbohidrat, Qty, Protein, url, index, ha
         p="3"
         alignItems="center"
         alignContent="center"
+        bgColor="white"
+        shadow={3}
     >
         <HStack p={1}>
         <Image
@@ -24,13 +26,13 @@ const AddedFoodItem = ({ Name, Energi, Karbohidrat, Qty, Protein, url, index, ha
             h="75"
         />
             <VStack pl="3">
-                <Heading w="200" size="md">
+                <Heading w="200" size="md" color="muted.700">
                 {Name}
                 </Heading>
-                <Text bold color="muted.300">
+                <Text bold color="muted.600">
                 {Energi}
                 </Text>
-                <Text italic>
+                <Text italic color="muted.500">
                 Carbs: {Karbohidrat}, Protein: {Protein}
                 </Text>
                 <Text>Quantity: {Qty} </Text>

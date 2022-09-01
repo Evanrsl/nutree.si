@@ -1,14 +1,5 @@
+import { Box, Button, Center, HStack, Text, VStack } from 'native-base'
 import React from 'react'
-import {
-  Text,
-  HStack,
-  Switch,
-  useColorMode,
-  Center,
-  VStack,
-  Box,
-  Button
-} from 'native-base'
 
 export default function Calendar(props: any) {
   function getAllDaysInMonth(year: number, month: number) {
@@ -100,12 +91,13 @@ export default function Calendar(props: any) {
       w={'100%'}
       alignSelf="center"
       bg={'muted.800'}
+      shadow={3}
       rounded="2xl"
       p={3}
       mb={5}
     >
       <VStack w={'100%'}>
-        <Text bold fontSize="xl" mb={2} alignItems="flex-start">
+        <Text bold fontSize="xl" mb={2} alignItems="flex-start" color="emerald.500">
           {months[props.month] + ' ' + props.year}
         </Text>
         <VStack alignSelf="center" w={'100%'}>

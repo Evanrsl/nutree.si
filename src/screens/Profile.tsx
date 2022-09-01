@@ -16,9 +16,9 @@ const Profile = () => {
 		flex={1}
 		bg={{
       linearGradient: {
-      colors: [ 'orange.700','orange.400', 'muted.900'],
-      start: [0, 0.2],
-      end: [0.2, 0.4]
+      colors: [ 'tertiary.500','tertiary.400','tertiary.300', 'muted.50'],
+      start: [0, 0.1],
+      end: [0, 1]
       }
     }}
     >
@@ -32,7 +32,6 @@ const Profile = () => {
       />
 			<Nutrition />
 			<Calories />
-
     	</ScrollView>
     </Center>
   )

@@ -18,12 +18,12 @@ const MyTabs = () => {
     <Tab.Navigator
       initialRouteName="Profile"
       screenOptions={{
-        tabBarActiveTintColor: '#F97316',
-        tabBarInactiveTintColor: '#ffffff',
+        tabBarActiveTintColor: '#10b981',
+        tabBarInactiveTintColor: '#000000',
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          backgroundColor: '#0D9488',
+          backgroundColor: '#ffffff',
           height: '8%'
         },
         

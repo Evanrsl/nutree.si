@@ -12,14 +12,14 @@ export default function Memories() {
 			flex={1}
 			bg={{
 				linearGradient: {
-				colors: ['muted.900', 'orange.600', 'teal.500'],
-				start: [0.4, 0.4],
-				end: [1, 0]
+				colors: [ 'tertiary.500','tertiary.400','tertiary.300', 'muted.50'],
+				start: [0, 0],
+				end: [0, 0.8]
 				}
 			}}
 			>
 			<AppBar title="Memories" />
-			<ScrollView flex={1} w={'100%'}
+			<ScrollView flex={1} w={'96%'}
 			ref={ref => {this.scrollView = ref}}
 			onContentSizeChange={() => this.scrollView.scrollToEnd({animated: false})}>
 				<VStack p={2}>
